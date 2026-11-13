@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Variables and Types | Python Cheat-Sheets</title>
+<meta name="description" content="Store values under names and know which type each value has.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Basics</p>
+  <h1>Variables and Types</h1>
+  <p class="lede">Store values under names and know which type each value has.</p>
+  <p class="meta"><span class="tag">Basics</span> <span class="tag">Beginner</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>A <strong>variable</strong> is a name that points to a value. Every value has a <strong>type</strong>, such as whole number (<code>int</code>), decimal number (<code>float</code>), text (<code>str</code>) or true/false (<code>bool</code>). Python works out the type for you.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">name = value          # create or change a variable
+type(name)            # ask for its type
+int("42")             # convert text to a whole number
+float("3.5")          # convert text to a decimal number
+str(42)               # convert a number to text</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">age = 17
+height = 1.68
+name = "Mina"
+is_student = True
+
+print(name, age, height, is_student)
+print(type(age), type(height), type(name), type(is_student))
+
+age = age + 1
+print(f"{name} will be {age} next year")
+
+total = int("40") + 2
+print(total)</code></pre>
+<p>The first <code>print</code> shows the four values, the second shows their types, and the last two show <code>Mina will be 18 next year</code> and <code>42</code>.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Mixing text and numbers.</strong> <code>"age: " + 17</code> raises a <code>TypeError</code>. Use <code>str(17)</code> or an f-string instead.</li><li><strong>Using <code>=</code> to compare.</strong> <code>=</code> stores a value; <code>==</code> compares two values.</li><li><strong>Bad names.</strong> Names cannot start with a digit or contain spaces. Use <code>snake_case</code> such as <code>total_price</code>.</li><li><strong>Forgetting to convert input.</strong> <code>input()</code> always returns text, so wrap it with <code>int()</code> or <code>float()</code> before doing math.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="strings.html">Strings</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <span></span>
+    <a class="next" href="strings.html"><span>Next &rarr;</span>Strings</a>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

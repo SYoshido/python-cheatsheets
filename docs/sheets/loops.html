@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loops | Python Cheat-Sheets</title>
+<meta name="description" content="Repeat code for every item in a collection or while a condition holds.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Control Flow</p>
+  <h1>Loops</h1>
+  <p class="lede">Repeat code for every item in a collection or while a condition holds.</p>
+  <p class="meta"><span class="tag">Control Flow</span> <span class="tag">Beginner</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>A <code>for</code> loop goes through the items of a collection one by one. A <code>while</code> loop repeats as long as its condition stays true. <code>range(n)</code> produces the numbers <code>0</code> to <code>n - 1</code>.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">for item in collection:
+    ...
+
+for i in range(5):            # 0, 1, 2, 3, 4
+    ...
+
+while condition:
+    ...
+
+break       # leave the loop now
+continue    # skip to the next round</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">total = 0
+for n in range(1, 6):
+    total += n
+print("sum 1..5 =", total)
+
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits, start=1):
+    print(index, fruit)
+
+countdown = 3
+while countdown &gt; 0:
+    print(countdown)
+    countdown -= 1
+print("go!")
+
+for n in range(10):
+    if n % 2 == 0:
+        continue
+    if n &gt; 7:
+        break
+    print("odd:", n)</code></pre>
+<p>The first loop prints <code>sum 1..5 = 15</code>, and the last loop prints the odd numbers <code>1</code>, <code>3</code>, <code>5</code> and <code>7</code> before <code>break</code> stops it.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Infinite <code>while</code> loops.</strong> Make sure something inside the loop eventually makes the condition false.</li><li><strong>Forgetting that <code>range</code> stops early.</strong> <code>range(5)</code> ends at <code>4</code>; use <code>range(1, 6)</code> for <code>1</code> to <code>5</code>.</li><li><strong>Looping with <code>range(len(x))</code>.</strong> Looping directly (<code>for item in x</code>) is simpler, and <code>enumerate</code> gives you the index too.</li><li><strong>Changing a list while looping over it.</strong> Build a new list instead.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="lists.html">Lists</a></li><li><a href="conditionals.html">Conditionals</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <a class="prev" href="conditionals.html"><span>&larr; Previous</span>Conditionals</a>
+    <a class="next" href="functions.html"><span>Next &rarr;</span>Functions</a>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

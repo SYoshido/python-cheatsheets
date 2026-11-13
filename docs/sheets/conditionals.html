@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conditionals | Python Cheat-Sheets</title>
+<meta name="description" content="Run different code depending on whether a condition is true.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Control Flow</p>
+  <h1>Conditionals</h1>
+  <p class="lede">Run different code depending on whether a condition is true.</p>
+  <p class="meta"><span class="tag">Control Flow</span> <span class="tag">Beginner</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>An <code>if</code> statement runs a block of code only when a condition is true. Add <code>elif</code> for more conditions and <code>else</code> for everything else. The block is marked by <strong>indentation</strong>, usually four spaces.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">if condition:
+    ...
+elif other_condition:
+    ...
+else:
+    ...
+
+# comparison: ==  !=  &lt;  &gt;  &lt;=  &gt;=
+# combine:    and  or  not</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">def grade(score):
+    if score &gt;= 90:
+        return "A"
+    elif score &gt;= 80:
+        return "B"
+    elif score &gt;= 60:
+        return "C"
+    else:
+        return "F"
+
+for s in [95, 83, 61, 40]:
+    print(s, grade(s))
+
+age = 20
+has_ticket = True
+if age &gt;= 18 and has_ticket:
+    print("Welcome in")</code></pre>
+<p>The loop prints the grades <code>A</code>, <code>B</code>, <code>C</code>, <code>F</code> for the four scores, and the last block prints <code>Welcome in</code>.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Missing colon.</strong> Every <code>if</code>, <code>elif</code> and <code>else</code> line ends with <code>:</code>.</li><li><strong>Inconsistent indentation.</strong> Mixing tabs and spaces raises an <code>IndentationError</code>.</li><li><strong>Wrong order of conditions.</strong> Python takes the first true branch, so test the strictest condition (<code>&gt;= 90</code>) first.</li><li><strong>Writing <code>if x = 5</code>.</strong> Use <code>==</code> to compare.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="loops.html">Loops</a></li><li><a href="functions.html">Functions</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <a class="prev" href="dictionaries.html"><span>&larr; Previous</span>Dictionaries</a>
+    <a class="next" href="loops.html"><span>Next &rarr;</span>Loops</a>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

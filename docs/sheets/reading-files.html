@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Files | Python Cheat-Sheets</title>
+<meta name="description" content="Open a text file, read its lines and close it safely with a with-block.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Functions and Files</p>
+  <h1>Reading Files</h1>
+  <p class="lede">Open a text file, read its lines and close it safely with a with-block.</p>
+  <p class="meta"><span class="tag">Functions and Files</span> <span class="tag">Intermediate</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>To read a file, open it, read the text and close it. The <code>with</code> statement closes the file for you, even if an error happens. Always pass <code>encoding="utf-8"</code> so text in any language reads correctly.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">with open("notes.txt", encoding="utf-8") as f:
+    text = f.read()          # the whole file as one string
+
+with open("notes.txt", encoding="utf-8") as f:
+    for line in f:           # one line at a time
+        ...
+
+with open("out.txt", "w", encoding="utf-8") as f:
+    f.write("hello\n")       # "w" replaces the file; "a" appends</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">with open("fruits.txt", "w", encoding="utf-8") as f:
+    f.write("apple\nbanana\ncherry\n")
+
+with open("fruits.txt", encoding="utf-8") as f:
+    lines = [line.strip() for line in f]
+
+print(lines)
+print(len(lines), "lines")
+
+try:
+    open("missing.txt", encoding="utf-8")
+except FileNotFoundError:
+    print("missing.txt does not exist")</code></pre>
+<p>The example first creates <code>fruits.txt</code>, so it runs anywhere. It prints <code>['apple', 'banana', 'cherry']</code>, <code>3 lines</code> and the not-found message.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Wrong path.</strong> A relative path like <code>"notes.txt"</code> is looked up from where you run the program, not where the script is saved.</li><li><strong>Forgetting <code>strip()</code>.</strong> Each line keeps its newline character <code>\n</code> at the end.</li><li><strong>Opening with <code>"w"</code> by accident.</strong> It erases the existing file. Use <code>"a"</code> to add to the end.</li><li><strong>Not closing the file.</strong> Use a <code>with</code> block so Python closes it for you.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="functions.html">Functions</a></li><li><a href="strings.html">Strings</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <a class="prev" href="functions.html"><span>&larr; Previous</span>Functions</a>
+    <span></span>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

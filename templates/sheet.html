@@ -1,0 +1,17 @@
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / {{category}}</p>
+  <h1>{{title}}</h1>
+  <p class="lede">{{summary}}</p>
+  <p class="meta"><span class="tag">{{category}}</span> <span class="tag">{{difficulty}}</span> <span class="updated">Updated {{updated}}</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>{{toc}}</ol>
+  </nav>
+  <div class="prose">
+{{body}}
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    {{prev}}
+    {{next}}
+  </nav>
+</article>

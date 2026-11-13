@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{page_title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="stylesheet" href="{{root}}assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{root}}index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+{{nav}}
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{{content}}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>{{site_name}} &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

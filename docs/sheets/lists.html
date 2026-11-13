@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lists | Python Cheat-Sheets</title>
+<meta name="description" content="Keep an ordered, changeable collection of values in one variable.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Data Structures</p>
+  <h1>Lists</h1>
+  <p class="lede">Keep an ordered, changeable collection of values in one variable.</p>
+  <p class="meta"><span class="tag">Data Structures</span> <span class="tag">Beginner</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>A <strong>list</strong> holds several values in order. You can add, remove and change items, and items can be of different types. Positions are numbered from <code>0</code>.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">items = [10, 20, 30]
+items[0]               # first item
+items.append(40)       # add to the end
+items.remove(20)       # remove the first matching value
+items.pop()            # remove and return the last item
+len(items)             # how many items
+sorted(items)          # new sorted list
+[x * 2 for x in items] # list comprehension</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">scores = [72, 95, 88]
+scores.append(60)
+scores[0] = 75
+
+print(scores)
+print(len(scores), max(scores), min(scores))
+print(sorted(scores))
+print(sorted(scores, reverse=True)[:2])
+
+doubled = [s * 2 for s in scores]
+passed = [s for s in scores if s &gt;= 70]
+print(doubled)
+print(passed)</code></pre>
+<p>The last line prints <code>[75, 95, 88]</code> because the <code>if</code> part of the comprehension drops the score <code>60</code>.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Index out of range.</strong> A list with 3 items has indexes <code>0</code>, <code>1</code>, <code>2</code>; asking for <code>items[3]</code> raises an <code>IndexError</code>.</li><li><strong>Expecting <code>append</code> to return a list.</strong> <code>append</code> changes the list and returns <code>None</code>, so <code>x = items.append(5)</code> makes <code>x</code> empty.</li><li><strong>Copying with <code>=</code>.</strong> <code>b = a</code> makes two names for one list. Use <code>b = a.copy()</code> for a real copy.</li><li><strong>Changing a list while looping over it.</strong> Loop over a copy or build a new list instead.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="dictionaries.html">Dictionaries</a></li><li><a href="loops.html">Loops</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <a class="prev" href="strings.html"><span>&larr; Previous</span>Strings</a>
+    <a class="next" href="dictionaries.html"><span>Next &rarr;</span>Dictionaries</a>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Strings | Python Cheat-Sheets</title>
+<meta name="description" content="Work with text using indexing, slicing, methods and f-strings.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Basics</p>
+  <h1>Strings</h1>
+  <p class="lede">Work with text using indexing, slicing, methods and f-strings.</p>
+  <p class="meta"><span class="tag">Basics</span> <span class="tag">Beginner</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>A <strong>string</strong> is a piece of text in quotes. Strings are <strong>immutable</strong>: methods such as <code>upper()</code> return a new string and never change the original.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">s = "hello"
+s[0]               # first character
+s[-1]              # last character
+s[1:4]             # slice: characters 1 up to (not including) 4
+len(s)             # number of characters
+s.upper()          # also lower(), strip(), title()
+s.replace("l", "L")
+s.split(",")       # text to list
+",".join(items)    # list to text
+f"Hi {name}"       # f-string: put values inside text</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">word = "  Python is fun  "
+clean = word.strip()
+
+print(clean)
+print(clean.upper())
+print(clean[0], clean[-1], clean[0:6])
+print(len(clean))
+print(clean.replace("fun", "great"))
+
+parts = "red,green,blue".split(",")
+print(parts)
+print(" and ".join(parts))
+
+price = 4.5
+print(f"Total: {price * 2:.2f} dollars")</code></pre>
+<p>The slice <code>clean[0:6]</code> gives <code>Python</code>, and the f-string format <code>:.2f</code> rounds to two decimal places, so the last line prints <code>Total: 9.00 dollars</code>.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Expecting a method to change the string.</strong> <code>s.upper()</code> on its own does nothing useful; write <code>s = s.upper()</code>.</li><li><strong>Off-by-one slices.</strong> The end index is not included, so <code>s[0:3]</code> has three characters.</li><li><strong>Changing a character directly.</strong> <code>s[0] = "J"</code> raises a <code>TypeError</code>. Build a new string instead.</li><li><strong>Forgetting the <code>f</code>.</strong> Without it, <code>"Hi {name}"</code> prints the braces literally.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="variables-and-types.html">Variables and Types</a></li><li><a href="lists.html">Lists</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <a class="prev" href="variables-and-types.html"><span>&larr; Previous</span>Variables and Types</a>
+    <a class="next" href="lists.html"><span>Next &rarr;</span>Lists</a>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

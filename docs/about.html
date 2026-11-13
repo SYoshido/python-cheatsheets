@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Python Cheat-Sheets</title>
+<meta name="description" content="Learn why these cheat-sheets exist and how every page is built.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="index.html">Home</a>
+<a href="index.html#sheets">Sheets</a>
+<a href="about.html" aria-current="page">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="page">
+  <h1>About</h1>
+  <p class="lede">Learn why these cheat-sheets exist and how every page is built.</p>
+  <div class="prose">
+<h2 id="what-this-is">What this is</h2>
+<p>Python Cheat-Sheets is a small collection of one-page references for people learning Python. Each sheet has the same four parts: <strong>what it is</strong>, the <strong>syntax</strong>, a <strong>runnable example</strong> and the <strong>common mistakes</strong>.</p>
+<p>New to Python? Start with <a href="sheets/variables-and-types.html">Variables and Types</a>, then <a href="sheets/strings.html">Strings</a>.</p>
+<h2 id="every-example-is-tested">Every example is tested</h2>
+<p>Before the site is built, a script runs every code example on every sheet. If an example fails, the project is not finished, so you can copy any snippet and trust that it works.</p>
+<h2 id="how-the-site-is-built">How the site is built</h2>
+<p>Every page is a Markdown file in the <code>content/</code> folder. A single script, <code>build.py</code>, turns those files into the HTML you are reading. There is no framework, no JavaScript and nothing to install beyond Python.</p>
+<div class="table-wrap"><table><thead><tr><th>Part</th><th>Where it lives</th><th>Who edits it</th></tr></thead><tbody><tr><td>Sheet text and code</td><td><code>content/</code></td><td>You or an AI assistant</td></tr><tr><td>Layout</td><td><code>templates/</code></td><td>Rarely</td></tr><tr><td>Look and feel</td><td><code>assets/style.css</code></td><td>Rarely</td></tr><tr><td>Finished website</td><td><code>docs/</code></td><td>Nobody; it is generated</td></tr></tbody></table></div>
+<h2 id="adding-a-sheet">Adding a sheet</h2>
+<p>The project includes a <code>CLAUDE.md</code> file that tells AI assistants the purpose, structure, naming rules and writing style of this site. To add a sheet, an assistant creates one Markdown file, runs the example checker and the build, and verifies the result.</p>
+  </div>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>

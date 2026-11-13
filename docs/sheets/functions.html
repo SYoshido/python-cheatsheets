@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Functions | Python Cheat-Sheets</title>
+<meta name="description" content="Name a block of code so you can reuse it with different inputs.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">Python <span>Cheat-Sheets</span></a>
+    <nav aria-label="Main">
+<a href="../index.html">Home</a>
+<a href="../index.html#sheets" aria-current="page">Sheets</a>
+<a href="../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+<article class="sheet">
+  <p class="crumbs"><a href="../index.html">Home</a> / <a href="../index.html#sheets">Sheets</a> / Functions and Files</p>
+  <h1>Functions</h1>
+  <p class="lede">Name a block of code so you can reuse it with different inputs.</p>
+  <p class="meta"><span class="tag">Functions and Files</span> <span class="tag">Beginner</span> <span class="updated">Updated 2026-11-13</span></p>
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol><li><a href="#what-it-is">What it is</a></li><li><a href="#syntax">Syntax</a></li><li><a href="#example">Example</a></li><li><a href="#common-mistakes">Common mistakes</a></li><li><a href="#related-sheets">Related sheets</a></li></ol>
+  </nav>
+  <div class="prose">
+<h2 id="what-it-is">What it is</h2>
+<p>A <strong>function</strong> is a named block of code. It takes <strong>parameters</strong> (inputs), does some work and can <strong>return</strong> a result. Functions stop you from copying and pasting the same code.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="language-python">def name(parameter, other="default"):
+    """One-line description."""
+    ...
+    return result
+
+name(value)                 # call it
+name(value, other="x")      # use a keyword argument</code></pre>
+<h2 id="example">Example</h2>
+<pre><code class="language-python">def area(width, height=1):
+    """Return the area of a rectangle."""
+    return width * height
+
+def describe(name, age):
+    return f"{name} is {age} years old"
+
+print(area(3, 4))
+print(area(5))
+print(area(height=2, width=6))
+print(describe("Mina", 17))
+
+result = area(2, 2)
+print(result + 1)</code></pre>
+<p>The calls print <code>12</code>, <code>5</code>, <code>12</code> and <code>Mina is 17 years old</code>, and the last line prints <code>5</code>.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<ul><li><strong>Forgetting <code>return</code>.</strong> Without it the function gives back <code>None</code>, so <code>print(f())</code> shows <code>None</code>.</li><li><strong>Calling without parentheses.</strong> <code>area</code> is the function itself; <code>area(3, 4)</code> runs it.</li><li><strong>Using a list as a default value.</strong> <code>def f(x=[])</code> shares one list between all calls. Use <code>x=None</code> and create the list inside.</li><li><strong>Expecting changes to variables outside.</strong> Variables created inside a function exist only inside it.</li></ul>
+<h2 id="related-sheets">Related sheets</h2>
+<ul><li><a href="conditionals.html">Conditionals</a></li><li><a href="reading-files.html">Reading Files</a></li></ul>
+  </div>
+  <nav class="pager" aria-label="Sheet navigation">
+    <a class="prev" href="loops.html"><span>&larr; Previous</span>Loops</a>
+    <a class="next" href="reading-files.html"><span>Next &rarr;</span>Reading Files</a>
+  </nav>
+</article>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Python Cheat-Sheets &middot; Built from Markdown with <code>build.py</code> &middot; Rules for contributors and AI agents live in <code>CLAUDE.md</code>.</p>
+  </div>
+</footer>
+</body>
+</html>
